@@ -1,11 +1,9 @@
 def shift_zeroes_to_the_end(nums):
-    non_zero_index = 0
-    for i in range(len(nums)):
-        if nums[i] != 0:
-            nums[non_zero_index] = nums[i]
-            non_zero_index += 1
-    for i in range(non_zero_index, len(nums)):
-        nums[i] = 0
+    left = 0
+    for right in range(len(nums)):
+        if nums[right] != 0:
+            nums[left], nums[right] = nums[right], nums[left]
+            left += 1
 
 nums = [int(num) for num in input().strip().split()]
 shift_zeroes_to_the_end(nums)
