@@ -1,8 +1,8 @@
 # Verify Sudoku Board
 
-Given a partially completed 9×9 Sudoku board, determine if the current state of the board adheres to the rules of the game:
-- Each **row** and **column** must contain unique numbers between 1 and 9, or be empty (represented as 0).
-- Each of the nine 3×3 **subgrids** that compose the grid must contain unique numbers between 1 and 9, or be empty.
+Given a partially completed `9 × 9` Sudoku board, determine if the current state of the board adheres to the rules of the game:
+- Each **row** and **column** must contain unique numbers between `1` and `9`, or be empty (represented as `0`).
+- Each of the nine `3 × 3` **subgrids** that compose the grid must contain unique numbers between `1` and `9`, or be empty.
 
 Note: You are asked to determine whether the **current state of the board** is valid given these rules, **not** whether the board is solvable.
 
