@@ -16,6 +16,16 @@ def linked_list_reversal(head):
     
     return prev_node
 
+def linked_list_reversal_using_recursion(head):
+    if not head or not head.next:
+        return head
+    
+    new_head = linked_list_reversal_using_recursion(head.next)
+
+    head.next.next = head
+    head.next = None
+    return new_head
+
 nums = [int(num) for num in input().strip().split(" -> ")]
 
 def list_to_linked_list(nums):
@@ -32,8 +42,14 @@ def list_to_linked_list(nums):
     return head
 
 reversed_linked_list = linked_list_reversal(list_to_linked_list(nums))
+reversed_linked_list_using_recursion = linked_list_reversal_using_recursion(list_to_linked_list(nums))
 
 while reversed_linked_list.next != None:
     print("{} -> ".format(reversed_linked_list.value), end="")
     reversed_linked_list = reversed_linked_list.next
 print(reversed_linked_list.value)
+
+while reversed_linked_list_using_recursion.next != None:
+    print("{} -> ".format(reversed_linked_list_using_recursion.value), end="")
+    reversed_linked_list_using_recursion = reversed_linked_list_using_recursion.next
+print(reversed_linked_list_using_recursion.value)
